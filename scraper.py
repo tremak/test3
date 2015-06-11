@@ -1480,7 +1480,7 @@ try :
                             if len (re.findall(r'[Pp]art\s[Tt]ime', horario)) :
                                 hastaDia = 'Vi'
                                 if len (re.findall(r'\d+\W+\d+', horario)[0]) :
-									inicio = re.findall(r'\d+\W+\d+', horario)[0]
+								    inicio = re.findall(r'\d+\W+\d+', horario)[0]
 								if len (re.findall(r'\d+\W+\d+', horario)[1]) :
 								    termino = re.findall(r'\d+\W+\d+', horario)[1]
                             elif len (re.findall(r'[Ff]ull [Tt]ime', horario)) :
