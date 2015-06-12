@@ -25,8 +25,8 @@ PortalesList = [
     #'http://www.relaxchile.cl/destacadas_top',
     #'http://www.relaxchile.cl/destacadas',
     #'http://miprivado.cl/',
-    'http://infiernohot.cl/',
-    #'http://www.elsilencio.cl/',
+    #'http://infiernohot.cl/',
+    'http://www.elsilencio.cl/',
     #'http://www.laestocada.cl/content.php',
     #'http://miescort.cl/',
     #'http://ponelo.cl/premium/'
