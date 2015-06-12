@@ -1724,9 +1724,10 @@ try :
                         tarifa = 'null'
                         if len (re.findall(r'lblFieldValor', EscortPage)) :
                             tarifa = EscortPage.split('lblFieldValor')[1].split('</span>')[0]
-                            tarifa = re.findall(r'\d+\.\d+', tarifa)[0].replace('.','')
-                            sql = sql + ',' + tarifa
-                            print 'Tarifa:', tarifa
+                            if len (re.findall(r'\d+\.\d+', tarifa)) :
+                            	tarifa = re.findall(r'\d+\.\d+', tarifa)[0].replace('.','')
+                        sql = sql + ',' + tarifa
+                        print 'Tarifa:', tarifa
                             
                         # Telephone of the Escort:
                         telefono = 'null'
