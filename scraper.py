@@ -1366,6 +1366,7 @@ try :
                                     print 'adicionalesItem : ------------------------\n', adicionalesItem, '\n---------------------'
                                     if len (re.findall(r'first\slast', adicionalesItem)) :
                                     	addicionales += adicionalesItem.split('<li class="first last">')[1] + '. '
+                                    	print 'Block 09 :', adicionalesItem.split('<li class="first last">')[1]
                                     	break
                                     if len (re.findall('first', adicionalesItem)) :
                                         adicionales += adicionalesItem.split('<li class="first">')[1] + '. '
