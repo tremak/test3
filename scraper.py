@@ -1234,10 +1234,10 @@ try :
                             if len (re.findall('Consultar', EscortPage)) :
                                 tarifa = 'null'
                             elif len (re.findall('valor\-ficha', EscortPage)) :
-                                tarifa = EscortPage.split('valor-ficha"><span class="label-ficha">Valor</span> $')[1].split('</div>')[0]
-                                if len (re.findall('\<a\sclass\=', tarifa)) :
-                                    tarifa = tarifa.split('<a class=')[0]
-                            tarifa = tarifa.replace(' ','').replace('.','')
+                                tarifaBlock = EscortPage.split('valor-ficha')[1].split('</div>')[0]
+                                if len (re.findall('\d+\s\d+', tarifaBlock)) :
+                                    tarifa = re.findall('\d+\s\d+', tarifaBlock)[0]
+                            tarifa = tarifa.replace('.','')
                             if not len (re.findall(r'\d+', tarifa)) :
                                 tarifa = 'null'
                             print 'Tarifa :', tarifa
