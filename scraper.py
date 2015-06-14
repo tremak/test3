@@ -14,21 +14,21 @@ reload(sys)
 sys.setdefaultencoding('iso-8859-1')
 
 PortalesList = [
-    'http://www.laestokada.cl/foro/index.php/rss/forums/2-anuncios-de-chicas-escorts-hasta-30lks/',
-    'http://www.laestokada.cl/foro/index.php/rss/forums/3-anuncios-de-chicas-escorts-sobre-35lks/',
-    'http://www.laestokada.cl/foro/index.php/forum/335-anuncios-de-chicas-escorts-sobre-50lks/',
-    'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?vip=1',
-    'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?premium=1',
-    'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?gold=1',
-    'http://www.sexo.cl/?id=996&bTodas=1',
-    'http://www.relaxchile.cl/destacadas_vip',
-    'http://www.relaxchile.cl/destacadas_top',
-    'http://www.relaxchile.cl/destacadas',
+    #'http://www.laestokada.cl/foro/index.php/rss/forums/2-anuncios-de-chicas-escorts-hasta-30lks/',
+    #'http://www.laestokada.cl/foro/index.php/rss/forums/3-anuncios-de-chicas-escorts-sobre-35lks/',
+    #'http://www.laestokada.cl/foro/index.php/forum/335-anuncios-de-chicas-escorts-sobre-50lks/',
+    #'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?vip=1',
+    #'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?premium=1',
+    #'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?gold=1',
+    #'http://www.sexo.cl/?id=996&bTodas=1',
+    #'http://www.relaxchile.cl/destacadas_vip',
+    #'http://www.relaxchile.cl/destacadas_top',
+    #'http://www.relaxchile.cl/destacadas',
     'http://miprivado.cl/',
-    'http://infiernohot.cl/',
-    'http://www.elsilencio.cl/',
-    'http://www.laestocada.cl/content.php',
-    'http://miescort.cl/',
+    #'http://infiernohot.cl/',
+    #'http://www.elsilencio.cl/',
+    #'http://www.laestocada.cl/content.php',
+    #'http://miescort.cl/',
     #'http://ponelo.cl/premium/'
     ]
 
@@ -180,7 +180,7 @@ try :
                             print 'Ubicacion split (:) :..................\n', ubicacion, '\n.............................\n'
                         if len (re.findall(r'\&', ubicacion)) :
                             ubicacion = ubicacion.split('&')[0]
-                    ubicacion = ubicacion.replace('\n','').replace('\'','')
+                    ubicacion = ubicacion.replace('\n','')
                     print 'Ubicacion Final:', ubicacion
                     
                     ubicacionLenLista += [len(ubicacion)]
@@ -390,7 +390,6 @@ try :
                             ubicacion = ubicacion.split('Servicios')[0]
                     if len (re.findall(r'\n', ubicacion)) :
                         ubicacion = ubicacion.split('\n')[0]
-                    ubicacion = ubicacion.replace('\'','')
                     print 'Ubicacion :', ubicacion
                     ubicacionLenLista += [len(ubicacion)]
                     sql = sql + ',\'' + ubicacion + '\''
@@ -517,7 +516,7 @@ try :
                         sql = sql + ',' + estatura
                         row = row + ',' + estatura            
                         
-            		# Breasts, Waist and Hips of our Escort:
+            			# Breasts, Waist and Hips of our Escort:
                         pechos = 'null'
                         cintura = 'null'
                         caderas = 'null'
@@ -551,13 +550,13 @@ try :
                         sql = sql + ',\'' + hastaDia + '\',\'' + inicio + '\',\'' + termino + '\''
                         row = row + ',' + hastaDia + ',' + inicio + ',' + termino
                         
-            		# Escort Location:
+            			# Escort Location:
                         ubicacion = ''
                         #if len (re.findall(r'\<span\s*class\=\"\_publicacion\_contenido\_detalle\_lista\_desc\"\>\n\t*', ListaDatos[18])) :
                         if len (re.findall(r'Ubicaci', EscortPage)) :
                             ubicacion = EscortPage.split('Ubicaci')[1].split('</li>')[0].split('<span class="_publicacion_contenido_detalle_lista_desc">')[1].split('</span>')[0]
                             #ubicacion = ((ListaDatos[18].split('<span class="_publicacion_contenido_detalle_lista_desc">'))[1].split('</span>'))[0]
-                            ubicacion = ubicacion.replace('\t','').replace('\n','').replace('\'','')
+                            ubicacion = ubicacion.replace('\t','').replace('\n','')
                         #print 'Lugar :', ubicacion
             
                         # Escort Location Aditional Data:
@@ -570,7 +569,7 @@ try :
                                     ubicacionAdicional = ubicacionAdicional.split('<span class=\"_publicacion_contenido_detalle_lista_desc3\">')[1]
                                     if len (re.findall(r'</span>', ubicacionAdicional)) :
                                         ubicacionAdicional = ubicacionAdicional.split('</span>')[0]
-                                        ubicacionAdicional = ubicacionAdicional.replace('\t','').replace('\n','').replace(',','.').replace('\'','')
+                                        ubicacionAdicional = ubicacionAdicional.replace('\t','').replace('\n','').replace(',','.')
                                         ubicacion = ubicacion + '. ' + ubicacionAdicional
                         #print 'Ubicacion Adicional :', ubicacionAdicional
                         print 'Lugar FINAL:', ubicacion
@@ -932,7 +931,6 @@ try :
                     ubicacion = str(BeautifulSoup(ubicacion, from_encoding='iso-8859-1'))
                     ubicacion = ubicacion.replace('<html><body><p>','')
                     ubicacion = ubicacion.replace('</p></body></html>','')
-                    ubicacion = ubiciacion.replace('\'','')
                 sql = sql + ',\'' + ubicacion + '\''
                 row = row + ',' + ubicacion
                 ubicacionLenLista += [len(ubicacion)]
@@ -1069,7 +1067,7 @@ try :
                             sql = sql + ',' + estatura
                             row = row + ',' + estatura 
                         
-                	    # Breasts, Waist and Hips of our Escort:
+                			# Breasts, Waist and Hips of our Escort:
                             pechos = 'null'
                             cintura = 'null'
                             caderas = 'null'
@@ -1150,7 +1148,7 @@ try :
                                 if len (re.findall('Atenci', partes)) :
                                     #print 'Lugar Atenci : ....................\n', partes, '\n...............................\n'
                                     lugar = partes.split('<td class="RespPop">')[1].split('</td>')[0]
-                                    lugar = lugar.replace(',','.').replace('\'','')
+                                    lugar = lugar.replace(',','.')
                             #print 'Lugar :', lugar
                             ubicacionLenLista += [len(ubicacion + '. ' + lugar)]
                             #print 'Largo String Lugar:', str(len(ubicacion + '. ' + lugar))
@@ -1343,7 +1341,6 @@ try :
                             print 'Ubicacion :', ubicacion
                             if len (re.findall('Atención\:', EscortPage)) :
                                 lugar = EscortPage.split('Atención:</span> ')[1].split('</div>')[0].replace(',', '.')
-                            lugar = lugar.replace('\','')
                             print 'Lugar :', lugar
                             ubicacionLenLista += [len(ubicacion + '. ' + lugar)]
                             print 'Largo String Lugar:', str(len(ubicacion + '. ' + lugar))
@@ -1366,16 +1363,16 @@ try :
                             if len (re.findall('sevicios\-ficha', EscortPage)) :
                                 adicionalesList = EscortPage.split('sevicios-ficha')[1].split('</li>')
                                 for adicionalesItem in adicionalesList :
-                                    #print 'adicionalesItem : ------------------------\n', adicionalesItem, '\n---------------------'
+                                    print 'adicionalesItem : ------------------------\n', adicionalesItem, '\n---------------------'
                                     if len (re.findall('first', adicionalesItem)) :
                                         adicionales += adicionalesItem.split('<li class="first">')[1] + '. '
-                                        #print 'Block 10 :', adicionalesItem.split('<li class="first">')[1]
+                                        print 'Block 10 :', adicionalesItem.split('<li class="first">')[1]
                                     elif len (re.findall('\<li\>', adicionalesItem)) :
                                         adicionales += adicionalesItem.split('<li>')[1] + '. '
-                                        #print 'Block 11 :', adicionalesItem.split('<li>')[1]
+                                        print 'Block 11 :', adicionalesItem.split('<li>')[1]
                                     elif len (re.findall('last', adicionalesItem)) :
                                         adicionales += adicionalesItem.split('<li class="last">')[1] + '.'
-                                        #print 'Block 12 :', adicionalesItem.split('<li class="last">')[1]
+                                        print 'Block 12 :', adicionalesItem.split('<li class="last">')[1]
                                         break
                             print 'Adicionales :', adicionales
                             adicionalesLenLista += [len(adicionales)]
@@ -1509,7 +1506,7 @@ try :
                         ubicacion = ''
                         if len (re.findall(r'Sector\:', EscortPage)) :
                             ubicacion = EscortPage.split('Sector:')[1].split('</dd>')[0]
-                            ubicacion = ubicacion.replace('\n', '').replace('\t', '').replace('</dt>','').replace('<dd>','')´.replace('\'','')
+                            ubicacion = ubicacion.replace('\n', '').replace('\t', '').replace('</dt>','').replace('<dd>','')
         
                         #print 'Ubicacion :', ubicacion
         
@@ -1666,7 +1663,7 @@ try :
                         if len (re.findall(r'ATENCION:', EscortPage)) :
                             habitacion = EscortPage.split('ATENCION:')[1].split('<span class="product-field-desc">')[0].split('<span class="product-field-display">')[1].split('</span>')[0]
                         #print 'Habitacion:', habitacion
-                        lugar = (sector + '. ' + habitacion).replace(',','.').replace('\'','')
+                        lugar = (sector + '. ' + habitacion).replace(',','.')
                         ubicacionLenLista += [len(lugar)]
                         sql = sql + ',\'' + lugar + '\''
                         #print 'Lugar:', lugar
@@ -1803,7 +1800,6 @@ try :
                                     habitacion = habitacion + habitacionItem.split('FichaField">')[1] + '. '
                             #print 'Lista de Habitaciones:', habitacion
                         lugar = lugar + '. ' + habitacion
-                        lugar = lugar.replace('\'','')
                         ubicacionLenLista += [len(lugar)]
                         sql = sql + ',\'' + lugar + '\''
                         print 'Lugar:', lugar
