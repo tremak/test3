@@ -1118,13 +1118,13 @@ try :
                                         inicio = re.findall('(\d+\W+\d+)\W+[ap]m\W+\d+\W+\d+\W+', horarios)[0]
                                         termino = re.findall('\d+\W+\d+\W+[ap]m\W+(\d+\W+\d+)\W+', horarios)[0]
                                     elif len (re.findall('\w+\sa\s', horarios)):
+                                    	if len (re.findall(r'[Vv][Ii]', horarios)) :
+                                    		hastaDia = 'Vi'
+                                    	elif len (re.findall(r'bado', horarios )) :
+                                    		hastaDia = 'Sa'
+                                    	elif len (re.findall(r'[Dd]omingo', horarios )):
+                                    		hastaDia = 'Do'
                                         if len (re.findall(r'\sde\s\d+\sa\s\d+', horarios)) :
-                                            hastaDiaList1 = horarios.split('\sde\s\d+\sa\s\d+')
-                                            #print 'hastaDiaList1: ....................\n', hastaDiaList1, '\n........................'
-                                            hastaDiaList2 = hastaDiaList1[0].split('\w+\sa\s')
-                                            #print 'hastaDiaList2: ....................\n', hastaDiaList2, '\n........................'
-                                            hastaDia = hastaDiaList2[0]#.decode('iso-8859-1')
-                                        if len (re.findall(r'\sde\s(\d+)\sa\s\d+', horarios)) :
                                             inicio = re.findall('\sde\s(\d+)\sa\s\d+', horarios)[0] + ':00'
                                             termino = re.findall('\sde\s\d+\sa\s(\d+)', horarios)[0] + ':00'
                             #print 'Hasta Dia :', hastaDia
