@@ -1364,6 +1364,9 @@ try :
                                 adicionalesList = EscortPage.split('sevicios-ficha')[1].split('</li>')
                                 for adicionalesItem in adicionalesList :
                                     print 'adicionalesItem : ------------------------\n', adicionalesItem, '\n---------------------'
+									if len (re.findall(r'first\slast', adicionalesItem)) :
+										adicionales += adicionalesItem.split('<li class="first last">')[1] + '. '
+										break
                                     if len (re.findall('first', adicionalesItem)) :
                                         adicionales += adicionalesItem.split('<li class="first">')[1] + '. '
                                         print 'Block 10 :', adicionalesItem.split('<li class="first">')[1]
