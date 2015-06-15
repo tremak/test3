@@ -14,21 +14,21 @@ reload(sys)
 sys.setdefaultencoding('iso-8859-1')
 
 PortalesList = [
-    #'http://www.laestokada.cl/foro/index.php/rss/forums/2-anuncios-de-chicas-escorts-hasta-30lks/',
-    #'http://www.laestokada.cl/foro/index.php/rss/forums/3-anuncios-de-chicas-escorts-sobre-35lks/',
-    #'http://www.laestokada.cl/foro/index.php/forum/335-anuncios-de-chicas-escorts-sobre-50lks/',
-    #'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?vip=1',
-    #'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?premium=1',
-    #'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?gold=1',
-    #'http://www.sexo.cl/?id=996&bTodas=1',
-    #'http://www.relaxchile.cl/destacadas_vip',
-    #'http://www.relaxchile.cl/destacadas_top',
-    #'http://www.relaxchile.cl/destacadas',
+    'http://www.laestokada.cl/foro/index.php/rss/forums/2-anuncios-de-chicas-escorts-hasta-30lks/',
+    'http://www.laestokada.cl/foro/index.php/rss/forums/3-anuncios-de-chicas-escorts-sobre-35lks/',
+    'http://www.laestokada.cl/foro/index.php/forum/335-anuncios-de-chicas-escorts-sobre-50lks/',
+    'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?vip=1',
+    'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?premium=1',
+    'http://www.planetaescort.cl/_js/ajax/cargar_portadas.php?gold=1',
+    'http://www.sexo.cl/?id=996&bTodas=1',
+    'http://www.relaxchile.cl/destacadas_vip',
+    'http://www.relaxchile.cl/destacadas_top',
+    'http://www.relaxchile.cl/destacadas',
     'http://miprivado.cl/',
-    #'http://infiernohot.cl/',
-    #'http://www.elsilencio.cl/',
-    #'http://www.laestocada.cl/content.php',
-    #'http://miescort.cl/',
+    'http://infiernohot.cl/',
+    'http://www.elsilencio.cl/',
+    'http://www.laestocada.cl/content.php',
+    'http://miescort.cl/',
     #'http://ponelo.cl/premium/'
     ]
 
