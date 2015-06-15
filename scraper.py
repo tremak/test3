@@ -1368,7 +1368,8 @@ try :
                                     	print 'Starting Block 09...........................'
                                     	print 'Block 09 List :', adicionalesItem.split('<li class="first last">')
                                     	print 'Block 09 :', adicionalesItem.split('<li class="first last">')[1]
-                                    	addicionales += adicionalesItem.split('<li class="first last">')[1] + '. '
+                                    	adicionales += adicionalesItem.split('<li class="first last">')[1] + '.'
+                                    	print 'Finalmente los adicionales :', adicionales
                                     	break
                                     elif len (re.findall('first', adicionalesItem)) :
                                         adicionales += adicionalesItem.split('<li class="first">')[1] + '. '
