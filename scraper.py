@@ -1365,10 +1365,11 @@ try :
                                 for adicionalesItem in adicionalesList :
                                     print 'adicionalesItem : ------------------------\n', adicionalesItem, '\n---------------------'
                                     if len (re.findall(r'first\slast', adicionalesItem)) :
+                                    	print 'Starting Block 09...........................'
                                     	addicionales += adicionalesItem.split('<li class="first last">')[1] + '. '
                                     	print 'Block 09 :', adicionalesItem.split('<li class="first last">')[1]
                                     	break
-                                    if len (re.findall('first', adicionalesItem)) :
+                                    elif len (re.findall('first', adicionalesItem)) :
                                         adicionales += adicionalesItem.split('<li class="first">')[1] + '. '
                                         print 'Block 10 :', adicionalesItem.split('<li class="first">')[1]
                                     elif len (re.findall('\<li\>', adicionalesItem)) :
