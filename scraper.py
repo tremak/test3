@@ -1481,7 +1481,8 @@ try :
                                 hastaDia = 'Vi'
                                 if len (re.findall(r'\d+\:\d+', horario)) :
                                     inicio = re.findall(r'\d+\:\d+', horario)[0]
-                                    termino = re.findall(r'\d+\:\d+', horario)[1]
+                                    if len (re.findall(r'\d+\:\d+', horario)) == 2 :
+                                        termino = re.findall(r'\d+\:\d+', horario)[1]
                             elif len (re.findall(r'[Ff]ull [Tt]ime', horario)) :
                                 hastaDia = 'Do'
                                 inicio = '00:00'
