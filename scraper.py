@@ -1730,9 +1730,9 @@ try :
                         # Price of the Escort's Services:
                         tarifa = 'null'
                         if len (re.findall(r'lblFieldValor', EscortPage)) :
-                            tarifa = EscortPage.split('lblFieldValor')[1].split('</span>')[0]
-                            if len (re.findall(r'\d+\.\d+', tarifa)) :
-                            	tarifa = re.findall(r'\d+\.\d+', tarifa)[0].replace('.','')
+                            tarifaBlock = EscortPage.split('lblFieldValor')[1].split('</span>')[0]
+                            if len (re.findall(r'\d+\.\d+', tarifaBlock)) :
+                            	tarifa = re.findall(r'\d+\.\d+', tarifaBlock)[0].replace('.','')
                         sql = sql + ',' + tarifa
                         print 'Tarifa:', tarifa
                             
