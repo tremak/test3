@@ -1233,9 +1233,9 @@ try :
                                 tarifa = 'null'
                             elif len (re.findall('valor\-ficha', EscortPage)) :
                                 tarifaBlock = EscortPage.split('valor-ficha')[1].split('</div>')[0]
-                                print 'tarifaBlock :\n----------------------------------\n', tarifaBlock, '\n--------------------------\n'
-                                if len (re.findall('\d+\s\d+', tarifaBlock)) :
-                                    tarifa = re.findall('\d+\s\d+', tarifaBlock)[0]
+                                #print 'tarifaBlock :\n----------------------------------\n', tarifaBlock, '\n--------------------------\n'
+                                if len (re.findall('\d+\.\d+', tarifaBlock)) :
+                                    tarifa = re.findall('\d+\.\d+', tarifaBlock)[0]
                             tarifa = tarifa.replace('.','')
                             if not len (re.findall(r'\d+', tarifa)) :
                                 tarifa = 'null'
