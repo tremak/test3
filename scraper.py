@@ -1078,14 +1078,14 @@ try :
                                         medidas = (medidasList[1].split('</td>'))[0]
                                         medidas = medidas.replace('\n','')
                                         medidas = medidas.replace('\t','')
-                                        #print 'Medidas :', medidas
+                                        print 'Medidas :', medidas
                                         if len (re.findall(r'[0-9]{2,3}\-[0-9]{2,3}\-[0-9]{2,3}', medidas)) :
                                             pechos = re.findall(r'([0-9]{2,3})\-[0-9]{2,3}\-[0-9]{2,3}', medidas)[0]
                                             cintura = re.findall(r'[0-9]{2,3}\-([0-9]{2,3})\-[0-9]{2,3}', medidas)[0]
                                             caderas = re.findall(r'[0-9]{2,3}\-[0-9]{2,3}\-([0-9]{2,3})', medidas)[0]
-                            #print 'Pechos :', pechos
-                            #print 'Cintura :', cintura
-                            #print 'Caderas :', caderas
+                            print 'Pechos :', pechos
+                            print 'Cintura :', cintura
+                            print 'Caderas :', caderas
                             sql = sql + ',' + pechos + ',' + cintura + ',' + caderas
                             row = row + ',' + pechos + ',' + cintura + ',' + caderas
                             
