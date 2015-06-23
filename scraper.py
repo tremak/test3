@@ -1079,11 +1079,11 @@ try :
                                         medidas = medidas.replace('\n','')
                                         medidas = medidas.replace('\t','')
                                         print 'Medidas :\n------------------------------------\n', medidas, '\n------------------------------------\n'
-                                        if len (re.findall(r'\d+\-\d+\-\d+', medidas)) :
+                                        if (len (re.findall(r'\d+\-\d+\-\d+', medidas))) AND ( NOT(len (re.findall(r'\&', medidas)))) AND ( NOT(len (re.findall(r'\#', medidas)))):
                                             pechos = re.findall(r'(\d+)\-\d+\-\d+', medidas)[0]
                                             cintura = re.findall(r'\d+\-(\d+)\-\d+', medidas)[0]
                                             caderas = re.findall(r'\d+\-\d+\-(\d+)', medidas)[0]
-                                        elif len (re.findall(r'\d+\W+\d+\W+\d+', medidas)) :
+                                        elif (len (re.findall(r'\d+\W+\d+\W+\d+', medidas))) AND ( NOT(len (re.findall(r'\&', medidas)))) AND ( NOT(len (re.findall(r'\#', medidas)))):
                                             pechos = re.findall(r'(\d+)\W+\d+\W+\d+', medidas)[0]
                                             cintura = re.findall(r'\d+\W+(\d+)\W+\d+', medidas)[0]
                                             caderas = re.findall(r'\d+\W+\d+\W+(\d+)', medidas)[0]
