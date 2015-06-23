@@ -1088,9 +1088,9 @@ try :
 												pechos = re.findall(r'(\d+)\W+\d+\W+\d+', medidas)[0]
 												cintura = re.findall(r'\d+\W+(\d+)\W+\d+', medidas)[0]
 												caderas = re.findall(r'\d+\W+\d+\W+(\d+)', medidas)[0]
-                            #print 'Pechos :', pechos
-                            #print 'Cintura :', cintura
-                            #print 'Caderas :', caderas
+                            print 'Pechos :', pechos
+                            print 'Cintura :', cintura
+                            print 'Caderas :', caderas
                             sql = sql + ',' + pechos + ',' + cintura + ',' + caderas
                             row = row + ',' + pechos + ',' + cintura + ',' + caderas
                             
