@@ -24,10 +24,10 @@ PortalesList = [
     #'http://www.relaxchile.cl/destacadas_vip',
     #'http://www.relaxchile.cl/destacadas_top',
     #'http://www.relaxchile.cl/destacadas',
-    #'http://miprivado.cl/',
+    'http://miprivado.cl/',
     #'http://infiernohot.cl/',
     #'http://www.elsilencio.cl/',
-    'http://www.laestocada.cl/content.php',
+    #'http://www.laestocada.cl/content.php',
     #'http://miescort.cl/',
     #'http://ponelo.cl/premium/'
     ]
@@ -1078,14 +1078,18 @@ try :
                                         medidas = (medidasList[1].split('</td>'))[0]
                                         medidas = medidas.replace('\n','')
                                         medidas = medidas.replace('\t','')
-                                        print 'Medidas :\n------------------------------------\n', medidas, '\n------------------------------------\n'
-										if len (re.findall(r'[0-9]{2,3}\-[0-9]{2,3}\-[0-9]{2,3}', medidas)) :
-											pechos = re.findall(r'([0-9]{2,3})\-[0-9]{2,3}\-[0-9]{2,3}', medidas)[0]
-											cintura = re.findall(r'[0-9]{2,3}\-([0-9]{2,3})\-[0-9]{2,3}', medidas)[0]
-											caderas = re.findall(r'[0-9]{2,3}\-[0-9]{2,3}\-([0-9]{2,3})', medidas)[0]
-                            print 'Pechos :', pechos
-                            print 'Cintura :', cintura
-                            print 'Caderas :', caderas
+                                        #print 'Medidas :', medidas
+                                        if len (re.findall(r'\d+\-\d+\-\d+', medidas)) :
+                                            pechos = re.findall(r'(\d+)\-\d+\-\d+', medidas)[0]
+                                            cintura = re.findall(r'\d+\-(\d+)\-\d+', medidas)[0]
+                                            caderas = re.findall(r'\d+\-\d+\-(\d+)', medidas)[0]
+                                        elif len (re.findall(r'\d+\W+\d+\W+\d+', medidas)) :
+                                            pechos = re.findall(r'(\d+)\W+\d+\W+\d+', medidas)[0]
+                                            cintura = re.findall(r'\d+\W+(\d+)\W+\d+', medidas)[0]
+                                            caderas = re.findall(r'\d+\W+\d+\W+(\d+)', medidas)[0]
+                            #print 'Pechos :', pechos
+                            #print 'Cintura :', cintura
+                            #print 'Caderas :', caderas
                             sql = sql + ',' + pechos + ',' + cintura + ',' + caderas
                             row = row + ',' + pechos + ',' + cintura + ',' + caderas
                             
